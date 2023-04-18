@@ -29,6 +29,7 @@ def download_pdf_file(url: str) -> bool:
 
 def get_data():
     baseurl = "https://www.nseindia.com/"
+    # pass required company name in the below url
     url = f"https://www.nseindia.com/api/annual-reports?index=equities&symbol=INDUSINDBK"
     headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, '
                              'like Gecko) '
@@ -46,8 +47,8 @@ def get_data():
         print(record["fileName"])
         download_pdf_file(record["fileName"])
         
-
+if __name__ == "__main__":
+    get_data()
     
-get_data()
         
     
